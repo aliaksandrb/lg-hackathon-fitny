@@ -76,7 +76,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     cd /vagrant/
     gem install bundler > /dev/null 2>&1
   SHELL
-    #bundle install
 
   config.vm.provision 'Setup environment variables', type: 'shell', run: 'always', privileged: false, inline: <<-SHELL
     echo > $HOME/.profile
@@ -90,20 +89,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     source $HOME/.profile
   SHELL
-
-#  config.vm.provision 'Connect to Postgress DB', type: 'shell', privileged: false, inline: <<-SHELL
-#    cd /vagrant/
-#    cp config/database.yml.example config/database.yml
-#    sed -r -i 's|password:.*$|password: #{POSTGRES_PASS}|g' config/database.yml
-#
-#    rake db:setup
-#  SHELL
-
-#  config.vm.provision 'Prepare for testing', type: 'shell', privileged: false, inline: <<-SHELL
-#    cd /vagrant/
-#    RAILS_ENV=test bundle install > /dev/null 2>&1
-#    rake db:test:prepare > /dev/null 2>&1
-#  SHELL
 
   config.vm.provision 'PROVISIONING COMPLETE!', run: 'always', type: 'shell',
     privileged: false, inline: <<-SHELL
