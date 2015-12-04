@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @step.name
+p
+  strong Guide:
+  = @step.guide
+p
+  strong Timer:
+  = @step.timer
+p
+  strong Line number:
+  = @step.line_number
+p
+  strong Layout type:
+  = @step.layout_type
+
+= link_to 'Edit', edit_step_path(@step)
+'|
+= link_to 'Back', steps_path

@@ -1,0 +1,29 @@
+h1 Listing steps
+
+table
+  thead
+    tr
+      th Name
+      th Guide
+      th Timer
+      th Line number
+      th Layout type
+      th
+      th
+      th
+
+  tbody
+    - @steps.each do |step|
+      tr
+        td = step.name
+        td = step.guide
+        td = step.timer
+        td = step.line_number
+        td = step.layout_type
+        td = link_to 'Show', step
+        td = link_to 'Edit', edit_step_path(step)
+        td = link_to 'Destroy', step, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Step', new_step_path

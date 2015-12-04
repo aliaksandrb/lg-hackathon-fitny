@@ -1,0 +1,12 @@
+= simple_form_for(@step) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.association :guide
+    = f.input :timer
+    = f.input :line_number
+    = f.association :layout_type
+
+  .form-actions
+    = f.button :submit

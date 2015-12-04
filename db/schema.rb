@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204215630) do
+ActiveRecord::Schema.define(version: 20151204215738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,19 @@ ActiveRecord::Schema.define(version: 20151204215630) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "steps", force: :cascade do |t|
+    t.string   "name",                       null: false
+    t.integer  "timer",          default: 0, null: false
+    t.integer  "line_number",    default: 1, null: false
+    t.integer  "layout_type_id",             null: false
+    t.integer  "guide_id",                   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "steps", ["guide_id"], name: "index_steps_on_guide_id", using: :btree
+  add_index "steps", ["layout_type_id"], name: "index_steps_on_layout_type_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -70,4 +83,6 @@ ActiveRecord::Schema.define(version: 20151204215630) do
 
   add_foreign_key "guides", "categories"
   add_foreign_key "guides", "users"
+  add_foreign_key "steps", "guides"
+  add_foreign_key "steps", "layout_types"
 end
