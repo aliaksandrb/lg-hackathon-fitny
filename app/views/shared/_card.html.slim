@@ -1,10 +1,10 @@
 .card.large
   .card-image
     = image_tag "http://placehold.it/350x150"
-    span.card-title = title
+    span.card-title
+      = title
   .card-content
     p.flow-text
-      I am a very simple card. I am good at containing small bits of information.
-      I am convenient because I require little markup to use effectively.
+      = description
   .card-action
     = link_to 'Show', object

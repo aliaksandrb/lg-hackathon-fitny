@@ -3,4 +3,5 @@ h1 Listing guides
   .row
      - row_guides.each do |guide|
       .col.s12.l3
-        = render partial: 'shared/card', locals: { object: guide, title: guide.name }
+        = render partial: 'shared/card', locals: { object: guide,
+          title: guide.name, description: guide.description }
