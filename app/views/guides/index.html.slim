@@ -1,25 +1,6 @@
 h1 Listing guides
-
-table
-  thead
-    tr
-      th Name
-      th Category
-      th User
-      th
-      th
-      th
-
-  tbody
-    - @guides.each do |guide|
-      tr
-        td = guide.name
-        td = guide.category_id
-        td = guide.user_id
-        td = link_to 'Show', guide
-        td = link_to 'Edit', edit_guide_path(guide)
-        td = link_to 'Destroy', guide, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Guide', new_guide_path
+- @guides.in_groups_of(4, false) do |row_guides|
+  .row
+     - row_guides.each do |guide|
+      .col.s12.l3
+        = render partial: 'shared/card', locals: { object: guide, title: guide.name }

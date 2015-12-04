@@ -16,5 +16,26 @@
 
 @import "materialize/components/color";
 $primary-color: color("cyan", "lighten-1") !default;
+
+//@import "materialize/components/variables";
+//@import "materialize/components/grid";
+
 @import 'materialize';
 @import "materialize/extras/nouislider";
+.container {
+  margin: 0 auto;
+  max-width: none;
+  //max-width: 1280px;
+  width: 90%;
+}
+@media #{$medium-and-up} {
+  .container {
+    width: 85%;
+  }
+}
+@media #{$large-and-up} {
+  .container {
+    width: 90%;//70%;
+  }
+}
+
