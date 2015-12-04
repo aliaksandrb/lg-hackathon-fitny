@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @category.name
+p
+  strong Parent:
+  = @category.parent_id
+p
+  strong Lft:
+  = @category.lft
+p
+  strong Rgt:
+  = @category.rgt
+p
+  strong Depth:
+  = @category.depth
+p
+  strong Children count:
+  = @category.children_count
+
+= link_to 'Edit', edit_category_path(@category)
+'|
+= link_to 'Back', categories_path

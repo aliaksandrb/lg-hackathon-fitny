@@ -19,6 +19,7 @@ gem 'materialize-sass'
 gem 'jquery-turbolinks'
 gem 'high_voltage'
 gem 'paperclip', '~> 4.3'
+gem 'awesome_nested_set'
 
 group :development do
   gem 'better_errors'
