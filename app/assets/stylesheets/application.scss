@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@import "materialize/components/color";
+$primary-color: color("cyan", "lighten-1") !default;
+@import 'materialize';
+@import "materialize/extras/nouislider";
