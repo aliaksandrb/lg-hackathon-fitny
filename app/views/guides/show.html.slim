@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @guide.name
+p
+  strong Category:
+  = @guide.category_id
+p
+  strong User:
+  = @guide.user_id
+
+= link_to 'Edit', edit_guide_path(@guide)
+'|
+= link_to 'Back', guides_path

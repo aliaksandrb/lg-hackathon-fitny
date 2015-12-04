@@ -1,0 +1,10 @@
+= simple_form_for(@guide) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.association :category_id
+    = f.association :user_id
+
+  .form-actions
+    = f.button :submit
