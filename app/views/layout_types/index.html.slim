@@ -1,0 +1,21 @@
+h1 Listing layout_types
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @layout_types.each do |layout_type|
+      tr
+        td = layout_type.name
+        td = link_to 'Show', layout_type
+        td = link_to 'Edit', edit_layout_type_path(layout_type)
+        td = link_to 'Destroy', layout_type, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Layout type', new_layout_type_path
