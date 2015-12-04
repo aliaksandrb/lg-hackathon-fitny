@@ -13,7 +13,11 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require turbolinks
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
-//= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $('select').material_select();
+});
