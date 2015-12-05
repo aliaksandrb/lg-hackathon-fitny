@@ -1,3 +1,18 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready( ->
+  clock = $('.timer-clock')
+  time = clock.data('time')
+
+  stop_callback = ->
+    setTimeout(->
+      clock.html('the end')
+    , 1000)
+
+  clock.FlipClock(time, {
+    countdown: true,
+    clockFace: 'MinuteCounter',
+    callbacks: {
+      stop: ->
+        stop_callback()
+    }
+  })
+)

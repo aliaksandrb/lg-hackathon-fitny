@@ -50,3 +50,15 @@ $mega-size: 10rem;
   }
 
 }
+
+$zoom: 3;
+.timer-clock {
+   zoom: $zoom;
+   -moz-transform: scale($zoom)
+}
+
+.flip-clock-wrapper {
+  margin: 0 auto;
+  max-width: 920px;//460px;
+  margin-top: 2em;
+}

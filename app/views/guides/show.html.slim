@@ -11,9 +11,11 @@ p#notice = notice
       strong User:
       = @guide.user_id
 
+    - if @guide.steps.any?
+      = link_to play_step_path(@guide.steps.first), class: 'btn-floating mega waves-effect waves-light green' do
+        i.material-icons play_circle_outline
 
-    a.btn-floating.mega.waves-effect.waves-light.green
-      i.material-icons play_circle_outline
+br
 
     = link_to 'Edit', edit_guide_path(@guide)
     '|
