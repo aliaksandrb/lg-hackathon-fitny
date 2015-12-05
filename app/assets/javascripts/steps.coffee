@@ -4,10 +4,11 @@ $(document).ready( ->
 
   stop_callback = ->
     setTimeout(->
-      clock.html('the end')
+      if flip_clock.getTime().time == 0
+        clock.html('the end')
     , 1000)
 
-  clock.FlipClock(time, {
+  flip_clock = clock.FlipClock(time, {
     countdown: true,
     clockFace: 'MinuteCounter',
     callbacks: {
@@ -15,4 +16,14 @@ $(document).ready( ->
         stop_callback()
     }
   })
+
+  $('#play-btn').on('click', (e) ->
+    e.preventDefault()
+    flip_clock.start()
+  )
+
+  $('#stop-btn').on('click', (e) ->
+    e.preventDefault()
+    flip_clock.stop()
+  )
 )

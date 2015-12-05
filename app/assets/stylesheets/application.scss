@@ -38,7 +38,7 @@ $primary-color: color("cyan", "lighten-1") !default;
   }
 }
 
-$mega-size: 10rem;
+$mega-size: 15rem;
 .mega {
   height: $mega-size;
   width: $mega-size;
@@ -61,4 +61,10 @@ $zoom: 3;
   margin: 0 auto;
   max-width: 920px;//460px;
   margin-top: 2em;
+}
+
+.actions-block {
+  a {
+    margin: 5em;
+  }
 }

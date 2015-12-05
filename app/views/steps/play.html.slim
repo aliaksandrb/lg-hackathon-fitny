@@ -2,4 +2,11 @@
   .s12
     .flip-clock-wrapper
       .timer-clock data-time="#{@step.timer}"
+      .actions-block
+        = link_to '#', id: 'play-btn',
+          class: 'btn-floating mega waves-effect waves-light green left-align' do
+          i.material-icons play_circle_outline
+        = link_to '#', id: 'stop-btn',
+          class: 'btn-floating mega waves-effect waves-light red right-align' do
+          i.material-icons pause_circle_outline
 
