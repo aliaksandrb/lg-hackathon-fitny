@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
+//= require flipclock.min
 //= require_tree .
 
 $(document).ready(function() {
