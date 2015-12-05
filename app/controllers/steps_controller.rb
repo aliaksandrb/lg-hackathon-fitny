@@ -89,7 +89,7 @@ class StepsController < ApplicationController
     def step_params
       params.require(:step).permit(
         :name, :guide_id, :timer, :line_number, :layout_type_id, :description,
-        :static_picture
+        :static_picture, :video
       )
     end
 end

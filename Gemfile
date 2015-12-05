@@ -19,6 +19,8 @@ gem 'materialize-sass'
 gem 'jquery-turbolinks'
 gem 'high_voltage'
 gem 'paperclip', '~> 4.3'
+gem 'paperclip-av-transcoder'
+gem 'videojs_rails'
 gem 'awesome_nested_set'
 
 group :development do

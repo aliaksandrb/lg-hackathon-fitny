@@ -10,7 +10,10 @@
           h1
             = @step.description
       - when 'picture'
-        = image_tag @step.static_picture.url, class: 'responsive-img'
+          = image_tag @step.static_picture.url, class: 'responsive-img'
+      - when 'video'
+        = videojs_rails sources: { mp4: @step.video.url },
+          controls: false, class: 'responsive-video', width: "100%"
 .row
   .s12
     .actions-block.center

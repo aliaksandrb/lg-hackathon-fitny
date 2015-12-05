@@ -44,11 +44,13 @@ $(document).ready( ->
 
   $('#play-btn').on('click', (e) ->
     e.preventDefault()
+    $('video')[0].play()
     flip_clock.start()
   )
 
   $('#stop-btn').on('click', (e) ->
     e.preventDefault()
+    $('video')[0].pause()
     flip_clock.stop()
   )
 )

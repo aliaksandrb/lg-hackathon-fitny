@@ -18,6 +18,7 @@
 //= require materialize/extras/nouislider
 //= require flipclock.min
 //= require fakeLoader.min
+//= require video
 //= require_tree .
 
 $(document).ready(function() {
