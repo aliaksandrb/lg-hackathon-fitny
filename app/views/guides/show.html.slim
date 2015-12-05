@@ -12,7 +12,7 @@ p#notice = notice
       = @guide.user_id
 
     - if @guide.steps.any?
-      = link_to play_step_path(@guide.steps.first), class: 'btn-floating mega waves-effect waves-light green' do
+      = link_to play_step_path(@guide.steps.order(line_number: :asc).first), class: 'btn-floating mega waves-effect waves-light green' do
         i.material-icons play_circle_outline
 
 br

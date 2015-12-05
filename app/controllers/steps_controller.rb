@@ -1,7 +1,22 @@
 class StepsController < ApplicationController
-  before_action :set_step, only: [:show, :edit, :update, :destroy, :play]
+  before_action :set_step, only: [
+    :show, :edit, :update, :destroy, :play, :next_step
+  ]
 
   def play
+  end
+
+  def next_step
+    guide = @step.guide
+    steps = guide.steps.sort_by(&:line_number)
+
+    next_step = steps.detect { |s| s.line_number > @step.line_number }
+
+    if next_step
+      render json: { step_id: next_step.id, url: step_url(next_step)}
+    else
+      render json: { step_id: 0 }
+    end
   end
 
   # GET /steps
