@@ -1,0 +1,10 @@
+- if @guides.any?
+  - @guides.in_groups_of(4, false) do |row_guides|
+    .row
+       - row_guides.each do |guide|
+        .col.s12.l3
+          = render partial: 'shared/card', locals: { object: guide,
+            title: guide.name, description: guide.description,
+            image_url: guide.background.url(:medium) }
+- else
+  h1 There is now guides yet. Create one!
