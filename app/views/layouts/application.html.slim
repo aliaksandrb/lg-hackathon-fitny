@@ -8,6 +8,7 @@ html
   = csrf_meta_tags
   body
     #fake-loader
+    = render partial: 'layouts/navigation'
     .row
       .col.s2
         = link_to root_path, id: 'logo-container', class: "brand-logo" do

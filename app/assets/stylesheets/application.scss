@@ -86,10 +86,14 @@ $zoom: 3;
   margin-top: 2em;
 }
 
-//.right {
-//  float: right !important;
-//}
-//
-//.left {
-//  float: left !important;
-//}
+.left-side-menu {
+  background-color: #26c6da;
+}
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
