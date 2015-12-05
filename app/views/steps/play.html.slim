@@ -2,15 +2,22 @@
   .s12
     .flip-clock-wrapper.step data-step-id="#{@step.id}" data-guide-id="#{@step.guide.id}"
       .timer-clock data-time="#{@step.timer}"
-      .step-content
-        - if @step.layout_type.name == 'static'
+.row
+  .s12
+    .step-content.center
+      - case @step.layout_type.name
+      - when 'static'
           h1
             = @step.description
-      .actions-block
-        = link_to '#', id: 'play-btn',
-          class: 'btn-floating mega waves-effect waves-light green left-align' do
-          i.material-icons play_circle_outline
-        = link_to '#', id: 'stop-btn',
-          class: 'btn-floating mega waves-effect waves-light red right-align' do
-          i.material-icons pause_circle_outline
+      - when 'picture'
+        = image_tag @step.static_picture.url, class: 'responsive-img'
+.row
+  .s12
+    .actions-block.center
+      = link_to '#', id: 'play-btn',
+        class: 'btn-floating mega waves-effect waves-light green left-align' do
+        i.material-icons play_circle_outline
+      = link_to '#', id: 'stop-btn',
+        class: 'btn-floating mega waves-effect waves-light red right-align' do
+        i.material-icons pause_circle_outline
 

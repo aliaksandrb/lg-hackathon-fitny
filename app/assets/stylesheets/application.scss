@@ -61,6 +61,14 @@ $zoom: 3;
   margin: 0 auto;
   max-width: 920px;//460px;
   margin-top: 2em;
+
+  .flip-clock-label {
+    display: none;
+  }
+}
+
+.center {
+  margin: 0 auto;
 }
 
 .actions-block {

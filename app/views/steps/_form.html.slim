@@ -1,4 +1,4 @@
-= simple_form_for(@step) do |f|
+= simple_form_for(@step, html: { multipart: true }) do |f|
   = f.error_notification
 
   .form-inputs
@@ -8,6 +8,7 @@
     = f.input :timer
     = f.input :line_number
     = f.association :layout_type
+    = f.file_field :static_picture
 
   .form-actions
     = f.button :submit

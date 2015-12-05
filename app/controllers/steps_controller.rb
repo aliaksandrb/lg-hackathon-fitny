@@ -88,7 +88,8 @@ class StepsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def step_params
       params.require(:step).permit(
-        :name, :guide_id, :timer, :line_number, :layout_type_id, :description
+        :name, :guide_id, :timer, :line_number, :layout_type_id, :description,
+        :static_picture
       )
     end
 end
