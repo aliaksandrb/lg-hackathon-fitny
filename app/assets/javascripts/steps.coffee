@@ -44,13 +44,15 @@ $(document).ready( ->
 
   $('#play-btn').on('click', (e) ->
     e.preventDefault()
-    $('video')[0].play()
+    video = $('video')[0]
+    video.play() if video
     flip_clock.start()
   )
 
   $('#stop-btn').on('click', (e) ->
     e.preventDefault()
-    $('video')[0].pause()
+    video = $('video')[0]
+    video.pause() if video
     flip_clock.stop()
   )
 )
