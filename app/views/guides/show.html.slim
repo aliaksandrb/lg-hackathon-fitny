@@ -15,14 +15,12 @@ p#notice = notice
             = @guide.description
           p
             strong Category:
-            = @guide.category_id
+            = @guide.category.name
           p
-            strong User:
-            = @guide.user_id
-          br
-          = link_to 'Edit', edit_guide_path(@guide)
+            strong Created by:
+            = @guide.user.email
         .col.s2
           - if @guide.steps.any?
-            = link_to play_step_path(@guide.steps.order(line_number: :asc).first), class: 'btn-floating mega waves-effect waves-light green offset-s6', id: 'start-guide-btn' do
+            = link_to play_step_path(@guide.steps.order(line_number: :asc).first), class: 'btn-floating mega waves-effect waves-light green offset-s6 start', id: 'start-guide-btn' do
               i.material-icons play_arrow
 

@@ -23,4 +23,11 @@
 
 $(document).ready(function() {
   $('select').material_select();
+  $('a.start').on('click', function(e) {
+        $("#fake-loader").fakeLoader({
+          timeToHide: 10000,
+          spinner: "spinner1",
+          bgColor: '#26c6da'
+        });
+    });
 });
