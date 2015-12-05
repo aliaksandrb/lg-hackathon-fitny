@@ -32,3 +32,4 @@ html
               .col.s12
                 - previous_steps_for(@step).each do |step|
                   = link_to step.name, play_step_path(step), class: 'breadcrumb'
+    = render 'layouts/footer' unless @step
