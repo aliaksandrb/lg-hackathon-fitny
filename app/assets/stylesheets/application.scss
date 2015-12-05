@@ -17,11 +17,9 @@
 @import "materialize/components/color";
 $primary-color: color("cyan", "lighten-1") !default;
 
-//@import "materialize/components/variables";
 //@import "materialize/components/grid";
-
 @import 'materialize';
-@import "materialize/extras/nouislider";
+//@import "materialize/extras/nouislider";
 .container {
   margin: 0 auto;
   max-width: none;
@@ -39,3 +37,15 @@ $primary-color: color("cyan", "lighten-1") !default;
   }
 }
 
+$mega-size: 10rem;
+.mega {
+  height: $mega-size;
+  width: $mega-size;
+  line-height: $mega-size;
+
+  i {
+    font-size: $mega-size;
+    line-height: $mega-size;
+  }
+
+}

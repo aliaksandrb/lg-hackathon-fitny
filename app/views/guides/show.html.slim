@@ -1,15 +1,20 @@
 p#notice = notice
+.row
+  .s12
+    p
+      strong Name:
+      = @guide.name
+    p
+      strong Category:
+      = @guide.category_id
+    p
+      strong User:
+      = @guide.user_id
 
-p
-  strong Name:
-  = @guide.name
-p
-  strong Category:
-  = @guide.category_id
-p
-  strong User:
-  = @guide.user_id
 
-= link_to 'Edit', edit_guide_path(@guide)
-'|
-= link_to 'Back', guides_path
+    a.btn-floating.mega.waves-effect.waves-light.green
+      i.material-icons play_circle_outline
+
+    = link_to 'Edit', edit_guide_path(@guide)
+    '|
+    = link_to 'Back', guides_path
