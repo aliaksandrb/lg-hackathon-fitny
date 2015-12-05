@@ -23,7 +23,7 @@
 
 $(document).ready(function() {
   $('select').material_select();
-  $('a.start').on('click', function(e) {
+  $('a.start, .collection.side-bar a, .card-action a').on('click', function(e) {
         $("#fake-loader").fakeLoader({
           timeToHide: 10000,
           spinner: "spinner1",

@@ -4,7 +4,7 @@ class GuidesController < ApplicationController
   # GET /guides
   # GET /guides.json
   def index
-    @guides = Guide.all
+    @guides = params[:filter] == 'all' ? Guide.all : Guide.promoted
   end
 
   # GET /guides/1
@@ -70,7 +70,7 @@ class GuidesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def guide_params
       params.require(:guide).permit(
-        :name, :category_id, :user_id, :description, :background
+        :name, :category_id, :user_id, :description, :background, :promoted
       )
     end
 end

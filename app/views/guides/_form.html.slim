@@ -4,6 +4,7 @@
   .form-inputs
     = f.input :name
     = f.input :description
+    = f.input :promoted, as: :boolean, boolean_style: :inline
     = f.association :category
     = f.association :user
     = f.file_field :background

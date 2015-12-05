@@ -3,7 +3,11 @@
     = image_tag image_url, class: 'responsive-img'
     span.card-title
       = title
+      - if object.try(:promoted)
+          i.material-icons.right.yellow-text.text-lighten-1.promo-icon star_rate
+
   .card-content
+
     p.flow-text
       = description
   .card-action
