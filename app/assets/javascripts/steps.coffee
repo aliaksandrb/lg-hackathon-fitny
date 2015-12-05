@@ -54,5 +54,20 @@ $(document).ready( ->
     video = $('video')[0]
     video.pause() if video
     flip_clock.stop()
+
+    fader = $('#fade-wrapper')
+    fader.fadeIn()
+    setTimeout(->
+      fader.fadeOut()
+    , 1000)
   )
+
+  $('#cancel-btn').on('click', (e) ->
+    $("#fake-loader").fakeLoader({
+      timeToHide: 10000,
+      spinner: "spinner1",
+      bgColor: '#26c6da'
+    })
+  )
+
 )
