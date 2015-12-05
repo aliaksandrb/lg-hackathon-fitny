@@ -5,6 +5,11 @@ $(document).ready( ->
   stop_callback = ->
     setTimeout(->
       if flip_clock.getTime().time == 0
+        $("#fake-loader").fakeLoader({
+          timeToHide: 10000,
+          spinner: "spinner1",
+          bgColor: '#26c6da'
+        });
         next_step()
       else
         console.log(flip_clock.getTime().time)
@@ -23,10 +28,12 @@ $(document).ready( ->
         window.location.replace(data.url + '/play')
       else
         window.location.replace('/guides/' + guide_id)
+
     ).fail((xhr, textStatus, error) ->
     )
 
   flip_clock = clock.FlipClock(time, {
+    autoStart: false,
     countdown: true,
     clockFace: 'MinuteCounter',
     callbacks: {
