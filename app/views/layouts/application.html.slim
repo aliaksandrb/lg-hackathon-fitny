@@ -14,9 +14,9 @@ html
     .row
       .col.s2
         = link_to root_path, id: 'logo-container', class: "brand-logo" do
-          = image_tag 'logo.jpeg', class: 'img-responsive'
+          = image_tag 'logo-small.png', class: 'img-responsive circle'
         .collection.side-bar
-          = link_to '#', class:' collection-item active' do
+          = link_to guides_path, class:' collection-item active' do
               | Promoted
               i.material-icons.right.yellow-text.text-lighten-1.promo-icon star_rate
           - categories_list.each do |category|

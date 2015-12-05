@@ -5,10 +5,11 @@ p#notice = notice
       .card-image
         = image_tag @guide.background.url, class: 'responsive-img guide-image'
         .card-title
-          = @guide.name
-          - if @guide.try(:promoted)
-            span.yellow-text.text-lighten-1
-              i.material-icons.right star_rate
+          h1.strong
+            = @guide.name
+            - if @guide.try(:promoted)
+              span.yellow-text.text-lighten-1
+                i.material-icons.right star_rate
       .row.guide-description
         .col.s2
             = link_to guides_path, class: 'pull-left btn-floating mega waves-effect waves-light orange', id: 'cancel-guide-btn' do
