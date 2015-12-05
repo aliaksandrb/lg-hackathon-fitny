@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready( ->
+  $('#start-guide-btn').on('click', (e) ->
+    $("#fake-loader").fakeLoader({
+      timeToHide: 10000,
+      spinner: "spinner1",
+      bgColor: '#26c6da'
+    })
+  )
+)

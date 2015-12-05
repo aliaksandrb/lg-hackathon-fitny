@@ -9,7 +9,7 @@ $(document).ready( ->
           timeToHide: 10000,
           spinner: "spinner1",
           bgColor: '#26c6da'
-        });
+        })
         next_step()
       else
         console.log(flip_clock.getTime().time)

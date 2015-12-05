@@ -8,5 +8,13 @@ html
   = csrf_meta_tags
   body
     #fake-loader
-    .container
-      == yield
+    .row
+      .col.s2
+        = link_to root_path, id: 'logo-container', class: "brand-logo" do
+          = image_tag 'logo.jpeg', class: 'img-responsive'
+        .collection
+          - categories_list.each do |category|
+            = link_to category.name.upcase, category, class: 'collection-item'
+      .col.s10
+        main
+          == yield
