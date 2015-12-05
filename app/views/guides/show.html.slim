@@ -1,22 +1,25 @@
 p#notice = notice
 .row
   .s12
-    p
-      strong Name:
-      = @guide.name
-    p
-      strong Category:
-      = @guide.category_id
-    p
-      strong User:
-      = @guide.user_id
+    .card.large.mega-card
+      .card-image
+        = image_tag @guide.background.url, class: 'responsive-img guide-image'
+        .span.card-title = @guide.name
+      .card-content
+        p
+          strong Name:
+          = @guide.name
+        p
+          strong Category:
+          = @guide.category_id
+        p
+          strong User:
+          = @guide.user_id
 
-    - if @guide.steps.any?
-      = link_to play_step_path(@guide.steps.order(line_number: :asc).first), class: 'btn-floating mega waves-effect waves-light green' do
-        i.material-icons play_circle_outline
-
-br
-
-    = link_to 'Edit', edit_guide_path(@guide)
-    '|
-    = link_to 'Back', guides_path
+        - if @guide.steps.any?
+          = link_to play_step_path(@guide.steps.order(line_number: :asc).first), class: 'btn-floating mega waves-effect waves-light green' do
+            i.material-icons play_circle_outline
+        br
+        = link_to 'Edit', edit_guide_path(@guide)
+        '|
+        = link_to 'Back', guides_path

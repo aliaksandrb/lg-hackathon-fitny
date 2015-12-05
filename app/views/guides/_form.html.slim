@@ -1,4 +1,4 @@
-= simple_form_for(@guide) do |f|
+= simple_form_for(@guide, html: {multipart: true}) do |f|
   = f.error_notification
 
   .form-inputs
@@ -6,6 +6,7 @@
     = f.input :description
     = f.association :category
     = f.association :user
+    = f.file_field :background
 
   .form-actions
     = f.button :submit
