@@ -61,7 +61,7 @@ $zoom: 3;
 .flip-clock-wrapper {
   margin: 0 auto;
   max-width: 920px;//460px;
-  margin-top: 2em;
+  //margin-top: 2em;
 
   .flip-clock-label {
     display: none;
@@ -111,4 +111,11 @@ $zoom: 3;
   background-color: #26c6da;
   text-align: center;
   margin: auto auto;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
 }

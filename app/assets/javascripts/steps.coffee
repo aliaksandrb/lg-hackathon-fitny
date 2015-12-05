@@ -44,9 +44,17 @@ $(document).ready( ->
 
   $('#play-btn').on('click', (e) ->
     e.preventDefault()
-    video = $('video')[0]
-    video.play() if video
-    flip_clock.start()
+    fader = $('#fade-wrapper')
+    fader.find('h1').html('Started')
+    fader.fadeIn()
+    setTimeout(->
+      fader.fadeOut(->
+        fader.find('h1').html('Paused')
+      )
+      video = $('video')[0]
+      video.play() if video
+      flip_clock.start()
+    , 1000)
   )
 
   $('#stop-btn').on('click', (e) ->

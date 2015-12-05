@@ -1,5 +1,7 @@
 .row
   .s12
+    h1.center-align
+      = "#{@step.guide.name} / #{@step.name}"
     .flip-clock-wrapper.step data-step-id="#{@step.id}" data-guide-id="#{@step.guide.id}"
       .timer-clock data-time="#{@step.timer}"
 .row
@@ -26,5 +28,4 @@
       = link_to '#', id: 'play-btn',
         class: 'btn-floating mega waves-effect waves-light green left-align' do
         i.material-icons play_arrow
-
 
