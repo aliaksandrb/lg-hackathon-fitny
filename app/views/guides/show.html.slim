@@ -29,7 +29,7 @@ p#notice = notice
           br
           hr
           p.flow-text
-            = @guide.description
+            == raw @guide.description
         .col.s2.offset-s1
           - if @guide.steps.any?
             = link_to play_step_path(@guide.steps.order(line_number: :asc).first), class: 'btn-floating mega waves-effect waves-light green offset-s6 start pull-right', id: 'start-guide-btn' do

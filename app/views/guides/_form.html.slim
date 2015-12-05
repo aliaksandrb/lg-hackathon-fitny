@@ -3,11 +3,13 @@
 
   .form-inputs
     = f.input :name
-    = f.input :description
+    = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini'}, class: 'textarea' }
     = f.input :promoted, as: :boolean, boolean_style: :inline
     = f.association :category
     = f.association :user
-    = f.file_field :background
 
+    = f.input :background, as: :file
+
+  br
   .form-actions
     = f.button :submit

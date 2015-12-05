@@ -18,6 +18,7 @@
 //= require materialize/extras/nouislider
 //= require flipclock.min
 //= require fakeLoader.min
+//= require ckeditor/init
 //= require video
 //= require_tree .
 

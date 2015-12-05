@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   resources :layout_types
   resources :guides do
     resources :steps, shallow: true do

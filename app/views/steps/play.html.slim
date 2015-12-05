@@ -10,7 +10,7 @@
       - case @step.layout_type.name
       - when 'static'
           h1
-            = @step.description
+            = raw @step.description
       - when 'picture'
           = image_tag @step.static_picture.url, class: 'responsive-img'
       - when 'video'

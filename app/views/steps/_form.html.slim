@@ -1,15 +1,17 @@
-= simple_form_for(@step, html: { multipart: true }) do |f|
+= simple_form_for([@guide, @step], html: { multipart: true }) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :name
-    = f.input :description
+    = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini'}, class: 'textarea' }
     = f.association :guide
     = f.input :timer
     = f.input :line_number
     = f.association :layout_type
-    = f.file_field :static_picture
-    = f.file_field :video
+    = f.input :static_picture, as: :file
+    br
+    = f.input :video, as: :file
 
+  br
   .form-actions
     = f.button :submit

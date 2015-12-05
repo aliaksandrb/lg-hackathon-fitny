@@ -32,7 +32,8 @@ class StepsController < ApplicationController
 
   # GET /steps/new
   def new
-    @step = Step.new
+    @guide = Guide.find(params[:guide_id])
+    @step = @guide.steps.build
   end
 
   # GET /steps/1/edit
@@ -42,11 +43,13 @@ class StepsController < ApplicationController
   # POST /steps
   # POST /steps.json
   def create
-    @step = Step.new(step_params)
+    @guide = Guide.find(params[:guide_id])
+    @step = @guide.steps.build(step_params)
+    #@step = Step.new(step_params)
 
     respond_to do |format|
       if @step.save
-        format.html { redirect_to @step, notice: 'Step was successfully created.' }
+        format.html { redirect_to @guide, notice: 'Step was successfully created.' }
         format.json { render :show, status: :created, location: @step }
       else
         format.html { render :new }

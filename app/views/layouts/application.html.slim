@@ -24,7 +24,7 @@ html
       .col.s10
         main
           == yield
-    - if @step
+    - if @step && !@step.new_record?
       .row
         .fixed
           nav
