@@ -1,0 +1,7 @@
+.step-up
+  .row
+    .s12
+      h1.center-align.step-name
+        = "#{@step.guide.name.upcase} : #{@step.name.upcase}"
+      .flip-clock-wrapper.step data-step-id="#{@step.id}" data-guide-id="#{@step.guide.id}"
+        .timer-clock data-time="#{@step.timer}"

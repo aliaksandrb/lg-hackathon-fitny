@@ -1,33 +1,23 @@
-.step-up
-  .row
-    .s12
-      h1.center-align.step-name
-        = "#{@step.guide.name.upcase} : #{@step.name.upcase}"
-      .flip-clock-wrapper.step data-step-id="#{@step.id}" data-guide-id="#{@step.guide.id}"
-        .timer-clock data-time="#{@step.timer}"
-.step-content.center
-  .row
-    .s12
-      - case @step.layout_type.name
-      - when 'static'
-          h4
-            = raw @step.description
-      - when 'picture'
+.play-container
+  - case @step.layout_type.name
+  - when 'static'
+    = render 'up'
+    = render 'down'
+    = render 'static'
+  - when 'picture'
+    = render 'up'
+    .step-content.center
+      .row
+        .s12
           .step-image-wrapper
             = image_tag @step.static_picture.url, class: 'responsive-img content-image'
-      - when 'video'
-        = videojs_rails sources: { mp4: @step.video.url },
-          controls: false, class: 'step-video', width: '100%', height: '100%'
-.step-down
-  .row
-    .s12
-      .actions-block.center
-        = link_to guide_path(@step.guide), id: 'cancel-btn',
-          class: 'btn-floating mega waves-effect waves-light orange right-align' do
-          i.material-icons close
-        = link_to '#', id: 'stop-btn',
-          class: 'btn-floating mega waves-effect waves-light red center-align' do
-          i.material-icons pause
-        = link_to '#', id: 'play-btn',
-          class: 'btn-floating mega waves-effect waves-light green left-align' do
-          i.material-icons play_arrow
+    = render 'down'
+  - when 'video'
+    = render 'up'
+    .step-content.center
+      .row
+        .s12
+          .step-image-wrapper
+            = videojs_rails sources: { mp4: @step.video.url },
+              controls: false, class: 'step-video', width: '100%', height: '100%'
+    = render 'down'
