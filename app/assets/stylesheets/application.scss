@@ -52,15 +52,15 @@ $mega-size: 100px;
   }
 }
 
-$mega-size: 200px;
-.mega-mega {
-  height: $mega-size;
-  width: $mega-size;
-  line-height: $mega-size;
+$bump: 200px;
+.bump {
+  height: $bump;
+  width: $bump;
+  line-height: $bump;
 
   i {
-    font-size: $mega-size;
-    line-height: $mega-size;
+    font-size: $bump;
+    line-height: $bump;
   }
 }
 
