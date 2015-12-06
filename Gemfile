@@ -23,6 +23,7 @@ gem 'paperclip-av-transcoder'
 gem 'videojs_rails'
 gem 'awesome_nested_set'
 gem 'ckeditor'
+gem 'material_icons'
 
 group :development do
   gem 'better_errors'

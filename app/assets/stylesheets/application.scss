@@ -12,6 +12,7 @@
 
  *= require flipclock
  *= require video-js
+ *= require material_icons
  *= require_tree .
  *= require_self
  */
@@ -168,4 +169,8 @@ a#logo-container {
   display: block;
   margin: 5px auto;
   text-align: center;
+}
+
+html {
+  color: #000; // fix for smart TVs
 }
