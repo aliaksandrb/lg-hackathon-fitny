@@ -11,20 +11,26 @@ html
       h1.pause Paused
     = render partial: 'layouts/navigation'
     .row
-      .col.s2
-        = link_to root_path, id: 'logo-container', class: "brand-logo" do
-          = image_tag 'logo-small.png', class: 'img-responsive circle'
-        .side-bar.left-side-bar-list
-          .card-panel.cyan.lighten-1
-            = link_to guides_path, class:'' do
-              | PROMOTED
-              i.material-icons.right.yellow-text.text-lighten-1.promo-icon star_rate
-          - categories_list.each do |category|
+      - unless @hidesidebar
+        .col.s2
+          = link_to root_path, id: 'logo-container', class: "brand-logo" do
+            = image_tag 'logo-small.png', class: 'img-responsive circle'
+          .side-bar.left-side-bar-list
             .card-panel.cyan.lighten-1
-              = link_to category.name.upcase, category
-      .col.s10
-        main
-          == yield
+              = link_to guides_path, class:'' do
+                | PROMOTED
+                i.material-icons.right.yellow-text.text-lighten-1.promo-icon star_rate
+            - categories_list.each do |category|
+              .card-panel.cyan.lighten-1
+                = link_to category.name.upcase, category
+        .col.s10
+          main
+            == yield
+      - else
+        .col.s12
+          main
+            == yield
+
     - if @step && !@step.new_record?
       .row
         .fixed

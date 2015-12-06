@@ -4,6 +4,7 @@ class StepsController < ApplicationController
   ]
 
   def play
+    @hidesidebar = true
   end
 
   def next_step
