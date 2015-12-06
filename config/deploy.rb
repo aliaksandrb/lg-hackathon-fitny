@@ -23,6 +23,7 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 set :rvm_ruby_version, '2.2.3'
 set :linked_files, fetch(:linked_files, []).push('config/database.yml')
+set :linked_files, fetch(:linked_files, []).push('.env')
 
 ## Defaults:
 # set :scm,           :git
