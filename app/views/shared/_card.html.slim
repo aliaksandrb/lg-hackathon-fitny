@@ -8,7 +8,7 @@
 
   .card-content
 
-    p.flow-text
-      = description
+    p.flow-text.card-desc
+      = raw description.truncate(150)
   .card-action
     = link_to 'Show', object

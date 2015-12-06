@@ -17,7 +17,7 @@ html
         .side-bar.left-side-bar-list
           .card-panel.cyan.lighten-1
             = link_to guides_path, class:'' do
-              | Promoted
+              | PROMOTED
               i.material-icons.right.yellow-text.text-lighten-1.promo-icon star_rate
           - categories_list.each do |category|
             .card-panel.cyan.lighten-1
@@ -33,4 +33,4 @@ html
               .col.s12
                 - previous_steps_for(@step).each do |step|
                   = link_to step.name, play_step_path(step), class: 'breadcrumb'
-    = render 'layouts/footer' unless @step
+    //= render 'layouts/footer' unless @step

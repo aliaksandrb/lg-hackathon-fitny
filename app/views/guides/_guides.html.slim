@@ -3,8 +3,9 @@
     .row
        - row_guides.each do |guide|
         .col.s12.l3
-          = render partial: 'shared/card', locals: { object: guide,
-            title: guide.name, description: guide.description,
-            image_url: guide.background.url(:medium) }
+          = link_to guide do
+            = render partial: 'shared/card', locals: { object: guide,
+              title: guide.name, description: guide.description,
+              image_url: guide.background.url(:medium) }
 - else
   h1 There is now guides yet. Create one!
