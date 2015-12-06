@@ -123,3 +123,14 @@ $zoom: 3;
 .promo-icon {
   width: 2em;
 }
+
+.image-parent {
+  position: relative;
+  overflow: hidden;
+}
+
+.guide-image {
+  max-height: 600px;
+  position: absolute;
+  margin: 0 auto;
+}
