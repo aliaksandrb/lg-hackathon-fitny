@@ -52,7 +52,7 @@ $mega-size: 15rem;
 
 }
 
-$zoom: 3;
+$zoom: 2.5;
 .timer-clock {
    zoom: $zoom;
    -moz-transform: scale($zoom)
@@ -60,7 +60,7 @@ $zoom: 3;
 
 .flip-clock-wrapper {
   margin: 0 auto;
-  max-width: 920px;//460px;
+  max-width: 750px;//460px;
   //margin-top: 2em;
 
   .flip-clock-label {
@@ -74,7 +74,7 @@ $zoom: 3;
 
 .actions-block {
   a {
-    margin: 5em;
+    margin-left: 3em;
   }
 }
 
@@ -133,4 +133,24 @@ $zoom: 3;
   max-height: 600px;
   position: absolute;
   margin: 0 auto;
+}
+
+$img-size: 300px;
+.step-content.center {
+  .step-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: $img-size;
+
+  }
+
+  .content-image {
+    max-height: $img-size;
+  }
+
+  .step-video {
+    width: auto;
+    height: $img-size;
+  }
 }

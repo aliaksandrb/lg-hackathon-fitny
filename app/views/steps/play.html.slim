@@ -9,13 +9,14 @@
     .step-content.center
       - case @step.layout_type.name
       - when 'static'
-          h1
+          h4
             = raw @step.description
       - when 'picture'
-          = image_tag @step.static_picture.url, class: 'responsive-img'
+          .step-image-wrapper
+            = image_tag @step.static_picture.url, class: 'responsive-img content-image'
       - when 'video'
         = videojs_rails sources: { mp4: @step.video.url },
-          controls: false, class: 'responsive-video', width: "100%"
+          controls: false, class: 'step-video', width: 'auto'
 .row
   .s12
     .actions-block.center
