@@ -29,13 +29,12 @@ html
     - else
       main
         == yield
-
-    - if @step && !@step.new_record?
-      .row
-        .fixed
-          nav
-            .nav-wrapper
-              .col.s12
-                - previous_steps_for(@step).each do |step|
-                  = link_to step.name, play_step_path(step), class: 'breadcrumb'
+        - if @step && !@step.new_record?
+          .row
+            .fixed
+              nav
+                .nav-wrapper
+                  .col.s12
+                    - previous_steps_for(@step).each do |step|
+                      = link_to step.name, play_step_path(step), class: 'breadcrumb'
     //= render 'layouts/footer' unless @step
