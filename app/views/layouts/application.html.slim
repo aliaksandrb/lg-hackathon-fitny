@@ -15,12 +15,14 @@ html
       .col.s2
         = link_to root_path, id: 'logo-container', class: "brand-logo" do
           = image_tag 'logo-small.png', class: 'img-responsive circle'
-        .collection.side-bar
-          = link_to guides_path, class:' collection-item active' do
+        .side-bar.left-side-bar-list
+          .card-panel.cyan.lighten-1
+            = link_to guides_path, class:'' do
               | Promoted
               i.material-icons.right.yellow-text.text-lighten-1.promo-icon star_rate
           - categories_list.each do |category|
-            = link_to category.name.upcase, category, class: 'collection-item'
+            .card-panel.cyan.lighten-1
+              = link_to category.name.upcase, category
       .col.s10
         main
           == yield
