@@ -30,7 +30,7 @@ group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.1'
   gem 'capistrano-bundler', '>= 1.1.4'
-  gem 'capistrano-rails', '~> 1.1.3'
+  gem 'capistrano-rails', :github => 'capistrano/rails'
   gem 'capistrano-rails-console'
   gem 'capistrano-rvm', '~> 0.1.1'
   gem 'capistrano3-puma', require: false
