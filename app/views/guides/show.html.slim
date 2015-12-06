@@ -12,9 +12,8 @@ p#notice = notice
                 i.material-icons.right star_rate
       .row.guide-description
         .col.s2
-            = link_to guides_path, class: 'pull-left btn-floating mega waves-effect waves-light orange', id: 'cancel-guide-btn' do
+            = link_to guides_path, class: 'pull-right btn-floating mega-mega waves-effect waves-light orange', id: 'cancel-guide-btn' do
               i.material-icons close
-            h3.center-align Cancel
         .col.s6.offset-s1
           p
             .pull-left
@@ -32,6 +31,5 @@ p#notice = notice
             == raw @guide.description
         .col.s2.offset-s1
           - if @guide.steps.any?
-            = link_to play_step_path(@guide.steps.order(line_number: :asc).first), class: 'btn-floating mega waves-effect waves-light green offset-s6 start pull-right', id: 'start-guide-btn' do
+            = link_to play_step_path(@guide.steps.order(line_number: :asc).first), class: 'btn-floating mega-mega waves-effect waves-light green offset-s6 start pull-left', id: 'start-guide-btn' do
               i.material-icons play_arrow
-            h3.center-align Run

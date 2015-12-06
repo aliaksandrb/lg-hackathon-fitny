@@ -10,8 +10,8 @@ html
     #fade-wrapper
       h1.pause Paused
     = render partial: 'layouts/navigation'
-    .row
-      - unless @hidesidebar
+    - unless @hidesidebar
+      .row
         .col.s2
           = link_to root_path, id: 'logo-container', class: "brand-logo" do
             = image_tag 'logo-small.png', class: 'img-responsive circle'
@@ -26,10 +26,9 @@ html
         .col.s10
           main
             == yield
-      - else
-        .col.s12
-          main
-            == yield
+    - else
+      main
+        == yield
 
     - if @step && !@step.new_record?
       .row
